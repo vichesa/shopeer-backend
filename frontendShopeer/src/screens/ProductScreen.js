@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
-import { detailsProduct } from '../actions/productActions';
-import LoadingBox from '../components/LoadingBox';
-import MessageBox from '../components/MessageBox';
-import Rating from '../components/Rating';
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import { detailsProduct } from "../actions/productActions";
+import LoadingBox from "../components/LoadingBox";
+import MessageBox from "../components/MessageBox";
+import Rating from "../components/Rating";
 
 export default function ProductScreen(props) {
   const dispatch = useDispatch();
@@ -81,7 +81,14 @@ export default function ProductScreen(props) {
                         <div className="row">
                           <div>Qty</div>
                           <div>
-                            <select
+                            <input
+                              type="number"
+                              id="qty"
+                              placeholder=""
+                              required
+                              onChange={(e) => setQty(e.target.value)}
+                            ></input>
+                            {/* <select
                               value={qty}
                               onChange={(e) => setQty(e.target.value)}
                             >
@@ -92,7 +99,7 @@ export default function ProductScreen(props) {
                                   </option>
                                 )
                               )}
-                            </select>
+                            </select> */}
                           </div>
                         </div>
                       </li>
